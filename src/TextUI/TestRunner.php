@@ -331,8 +331,11 @@ final class TestRunner extends BaseTestRunner
             }
         }
 
-        foreach ($arguments['warnings'] as $warning) {
-            $this->writeMessage('Warning', $warning);
+        if(isset($arguments['warnings']))
+        {
+            foreach ($arguments['warnings'] as $warning) {
+                $this->writeMessage('Warning', $warning);
+            }
         }
 
         if ($arguments['executionOrder'] === TestSuiteSorter::ORDER_RANDOMIZED) {
